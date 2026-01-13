@@ -1,50 +1,142 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+SYNC IMPACT REPORT
+==================
+Version Update: 0.0.0 -> 1.0.0 (Initial Constitution Adoption)
+Modified Principles:
+  - Replaced generic template placeholders with specific project principles:
+    1. Authority
+    2. System Scope
+    3. Data Integrity
+    4. Incentive Rules
+    5. Access Control
+    6. User Experience
+    7. Performance
+    8. Compliance
+    9. Extensibility
+    10. Prohibited Practices
+Added Sections:
+  - Detailed Governance & Amendment Procedure (Section 11)
+Removed Sections:
+  - Generic template structure (Core Principles I-V)
+Templates Status:
+  - .specify/templates/plan-template.md: ✅ Compatible (Dynamic Constitution Check)
+  - .specify/templates/spec-template.md: ✅ Compatible
+  - .specify/templates/tasks-template.md: ✅ Compatible
+Follow-up:
+  - None
+-->
+# Constitution — ICI Marketing Incentives System
 
-## Core Principles
+## 1. Authority of This Constitution
+This document defines the **non-negotiable rules** governing the ICI Marketing Incentives System.
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+All specifications, implementation plans, task breakdowns, and code **must comply** with this constitution.  
+In case of conflict, **this document takes precedence**.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## 2. System Scope & Intent
+- This is an **internal institutional system** for Iligan Computer Institute.
+- The system exists solely to **track, validate, and award recruitment-based incentives**.
+- The system must **not function as or resemble a public MLM or referral platform**.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+## 3. Data Integrity & Auditability
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 3.1 Auditability
+- All recruitment, status, and incentive data **must be auditable**.
+- Incentive origins must be **fully traceable** to recruitment events.
+- Incentive computations must be **explainable and reproducible**.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 3.2 Immutability Rules
+- No silent data mutation is allowed.
+- All status changes, incentive awards, reversals, or corrections **must be logged**.
+- Historical records must remain accessible and intact.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### 3.3 Tree Integrity
+- Recruitment relationships **must form a valid tree structure**.
+- Cycles are strictly prohibited.
+- A user **cannot exist simultaneously as upline and downline** within the same branch.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## 4. Incentive Rules Enforcement
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+- Incentives **must not be awarded immediately upon registration**.
+- Incentives are awarded **only when eligibility conditions are met**.
+- If a recruited student is:
+  - **Cancelled** → no incentive
+  - **Not Enrolled** → no incentive
+- Incentive values:
+  - Are **centrally configurable**
+  - Must **never be hard-coded**
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## 5. Role-Based Access Control
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+- Access must be strictly **role-based**.
+- Users may only access data relevant to their role.
+- Administrative actions must be:
+  - Explicit
+  - Logged
+- Students and teachers:
+  - Cannot alter incentive rules
+  - Cannot manipulate recruitment hierarchies
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+## 6. User Experience Principles
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+- The system must prioritize **clarity over complexity**.
+- Interfaces must be:
+  - Intuitive
+  - Purpose-built
+  - Professional and non-generic
+- Tree views must:
+  - Be readable on mobile devices
+  - Clearly communicate uplines and downlines
+
+## 7. Performance & Connectivity Constraints
+
+- The system must function under:
+  - Low bandwidth conditions
+  - Intermittent connectivity
+- Critical operations must:
+  - Fail safely
+  - Never corrupt data
+
+## 8. Privacy & Regulatory Compliance
+
+- The system must comply with **Philippine data privacy regulations**.
+- Personal data must:
+  - Be accessed only when necessary
+  - Be protected from unauthorized access
+- The system is:
+  - Internal-only
+  - Not publicly accessible
+  - Not usable without authentication
+
+## 9. Extensibility Without Breakage
+
+- Incentive rules may evolve over time.
+- Recruitment statuses may expand.
+- Historical data must remain valid, interpretable, and consistent.
+
+## 10. Prohibited Practices
+
+The following are strictly prohibited:
+- Hard-coded incentive logic
+- Unlogged administrative actions
+- Automatic incentive awarding without validation
+- Public referral sharing mechanisms
+- UI patterns that obscure incentive computation logic
+
+## 11. Governance
+
+### Amendment Procedure
+1. **Proposal**: Amendments must be submitted as a formal Pull Request.
+2. **Review**: Changes must be reviewed by the system architect/owner.
+3. **Approval**: Ratification requires explicit sign-off; silent merge is not ratification.
+4. **Versioning**:
+   - **Major**: Fundamental change to core rules (e.g., changing from MLM-prohibited to MLM-allowed).
+   - **Minor**: New principle added or meaningful clarification.
+   - **Patch**: Typo fixes or non-semantic wording changes.
+
+### Compliance
+- All new feature specifications must be cross-checked against this constitution.
+- Non-compliant code must be rejected at review.
+- The `plan-template` Constitution Check gate is mandatory.
+
+**Version**: 1.0.0 | **Ratified**: 2026-01-13 | **Last Amended**: 2026-01-13

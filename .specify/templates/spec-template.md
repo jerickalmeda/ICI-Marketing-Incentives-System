@@ -82,6 +82,16 @@
   Fill them out with the right functional requirements.
 -->
 
+### Constitution Constraints *(non-negotiable)*
+
+All requirements in this spec MUST comply with the project constitution in `.specify/memory/constitution.md`.
+
+- Internal-only: No public referral sharing mechanisms; no MLM-like user journeys.
+- Auditability/immutability: No silent mutation of recruitment/status/incentive data; changes must be logged.
+- Tree integrity: No cycles; hierarchy updates must preserve a valid tree.
+- Incentive enforcement: No incentive on registration; eligibility-based only; incentive values must not be hard-coded.
+- RBAC/privacy: Role-scoped access only; admin actions explicit + logged; minimize personal data exposure.
+
 ### Functional Requirements
 
 - **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]

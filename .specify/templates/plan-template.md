@@ -31,7 +31,14 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Confirm this plan complies with `.specify/memory/constitution.md`.
+- Internal-only: Feature MUST NOT introduce public referral sharing or MLM-like behaviors.
+- Auditability: Recruitment/status/incentive changes MUST be traceable and logged (no silent mutation).
+- Tree integrity: Relationship changes MUST maintain an acyclic tree (no cycles; no upline/downline contradiction).
+- Incentive rules: Incentives MUST NOT be awarded on registration; MUST be eligibility-based; amounts MUST be centrally configurable (no hard-coding).
+- RBAC: Access MUST be role-scoped; admin actions explicit + logged; students/teachers cannot alter rules or hierarchies.
+- Privacy: Philippine data privacy compliance; minimize personal data exposure; authentication required for all access.
+- Connectivity safety: Critical operations MUST fail safely (no partial writes/corruption) under low bandwidth/intermittent connectivity.
 
 ## Project Structure
 

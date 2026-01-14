@@ -1,121 +1,86 @@
+# ICI Marketing Incentives System Constitution
+
 <!--
-SYNC IMPACT REPORT
-==================
-Version Update: 0.0.0 -> 1.0.0 (Initial Constitution Adoption)
-Modified Principles:
-  - Replaced generic template placeholders with specific project principles:
-    1. Authority
-    2. System Scope
-    3. Data Integrity
-    4. Incentive Rules
-    5. Access Control
-    6. User Experience
-    7. Performance
-    8. Compliance
-    9. Extensibility
-    10. Prohibited Practices
-Added Sections:
-  - Detailed Governance & Amendment Procedure (Section 11)
-Removed Sections:
-  - Generic template structure (Core Principles I-V)
-Templates Status:
-  - .specify/templates/plan-template.md: ✅ Compatible (Dynamic Constitution Check)
-  - .specify/templates/spec-template.md: ✅ Compatible
-  - .specify/templates/tasks-template.md: ✅ Compatible
-Follow-up:
-  - None
+Sync Impact Report
+
+- Version change: template (unversioned) -> 1.0.0
+- Modified principles: N/A (initial adoption)
+- Added sections: Core Principles, Non-Functional Constraints, Development Expectations, Governance
+- Removed sections: N/A
+- Templates requiring updates:
+	- .specify/templates/plan-template.md (UPDATED)
+	- .specify/templates/spec-template.md (UPDATED)
+	- .specify/templates/tasks-template.md (UPDATED)
+	- .specify/templates/checklist-template.md (UPDATED)
+	- .specify/templates/commands/*.md (CREATED + UPDATED)
+- Deferred items:
+	- TODO(RATIFICATION_DATE): original adoption date not present in repo context yet
 -->
-# Constitution — ICI Marketing Incentives System
 
-## 1. Authority of This Constitution
-This document defines the **non-negotiable rules** governing the ICI Marketing Incentives System.
+## Core Principles
 
-All specifications, implementation plans, task breakdowns, and code **must comply** with this constitution.  
-In case of conflict, **this document takes precedence**.
+### 1. Authority of This Constitution
+This document defines the non-negotiable rules governing the ICI Marketing Incentives System.
 
-## 2. System Scope & Intent
-- This is an **internal institutional system** for Iligan Computer Institute.
-- The system exists solely to **track, validate, and award recruitment-based incentives**.
-- The system must **not function as or resemble a public MLM or referral platform**.
+All specifications, implementation plans, task breakdowns, and code MUST comply with this constitution.
+If any document or implementation conflicts with this constitution, this document takes precedence.
 
-## 3. Data Integrity & Auditability
+### 2. System Scope & Intent
+- The system is an internal institutional system for Iligan Computer Institute.
+- The system exists solely to track, validate, and award recruitment-based incentives.
+- The system MUST NOT function as or resemble a public MLM or referral platform.
 
-### 3.1 Auditability
-- All recruitment, status, and incentive data **must be auditable**.
-- Incentive origins must be **fully traceable** to recruitment events.
-- Incentive computations must be **explainable and reproducible**.
+### 3. Data Integrity & Auditability
 
-### 3.2 Immutability Rules
+**Auditability**
+- All recruitment, status, and incentive data MUST be auditable.
+- Incentive origins MUST be fully traceable to recruitment events.
+- Incentive computations MUST be explainable and reproducible.
+
+**Immutability Rules**
 - No silent data mutation is allowed.
-- All status changes, incentive awards, reversals, or corrections **must be logged**.
-- Historical records must remain accessible and intact.
+- All status changes, incentive awards, reversals, or corrections MUST be logged.
+- Historical records MUST remain accessible and intact.
 
-### 3.3 Tree Integrity
-- Recruitment relationships **must form a valid tree structure**.
+**Tree Integrity**
+- Recruitment relationships MUST form a valid tree structure.
 - Cycles are strictly prohibited.
-- A user **cannot exist simultaneously as upline and downline** within the same branch.
+- A user MUST NOT exist simultaneously as upline and downline within the same branch.
 
-## 4. Incentive Rules Enforcement
-
-- Incentives **must not be awarded immediately upon registration**.
-- Incentives are awarded **only when eligibility conditions are met**.
+### 4. Incentive Rules Enforcement
+- Incentives MUST NOT be awarded immediately upon registration.
+- Incentives MUST be awarded only when eligibility conditions are met.
 - If a recruited student is:
-  - **Cancelled** → no incentive
-  - **Not Enrolled** → no incentive
-- Incentive values:
-  - Are **centrally configurable**
-  - Must **never be hard-coded**
+	- Cancelled -> no incentive
+	- Not Enrolled -> no incentive
+- Incentive values MUST be centrally configurable and MUST never be hard-coded.
 
-## 5. Role-Based Access Control
+### 5. Role-Based Access Control
+- Access MUST be strictly role-based.
+- Users MUST only access data relevant to their role.
+- Administrative actions MUST be explicit and MUST be logged.
+- Students and teachers MUST NOT be able to alter incentive rules or manipulate recruitment hierarchies.
 
-- Access must be strictly **role-based**.
-- Users may only access data relevant to their role.
-- Administrative actions must be:
-  - Explicit
-  - Logged
-- Students and teachers:
-  - Cannot alter incentive rules
-  - Cannot manipulate recruitment hierarchies
+### 6. User Experience Principles
+- The system MUST prioritize clarity over complexity.
+- Interfaces MUST be intuitive, purpose-built, and professional (non-generic).
+- Tree views MUST be readable on mobile devices and MUST clearly communicate uplines and downlines.
 
-## 6. User Experience Principles
+### 7. Performance & Connectivity Constraints
+- The system MUST function under low bandwidth conditions and intermittent connectivity.
+- Critical operations MUST fail safely and MUST NOT corrupt data.
 
-- The system must prioritize **clarity over complexity**.
-- Interfaces must be:
-  - Intuitive
-  - Purpose-built
-  - Professional and non-generic
-- Tree views must:
-  - Be readable on mobile devices
-  - Clearly communicate uplines and downlines
+### 8. Privacy & Regulatory Compliance
+- The system MUST comply with Philippine data privacy regulations.
+- Personal data MUST be accessed only when necessary and MUST be protected from unauthorized access.
+- The system MUST be internal-only, MUST NOT be publicly accessible, and MUST NOT be usable without authentication.
 
-## 7. Performance & Connectivity Constraints
+### 9. Extensibility Without Breakage
+- Incentive rules MAY evolve over time.
+- Recruitment statuses MAY expand.
+- Historical data MUST remain valid, interpretable, and consistent across rule/status evolution.
 
-- The system must function under:
-  - Low bandwidth conditions
-  - Intermittent connectivity
-- Critical operations must:
-  - Fail safely
-  - Never corrupt data
-
-## 8. Privacy & Regulatory Compliance
-
-- The system must comply with **Philippine data privacy regulations**.
-- Personal data must:
-  - Be accessed only when necessary
-  - Be protected from unauthorized access
-- The system is:
-  - Internal-only
-  - Not publicly accessible
-  - Not usable without authentication
-
-## 9. Extensibility Without Breakage
-
-- Incentive rules may evolve over time.
-- Recruitment statuses may expand.
-- Historical data must remain valid, interpretable, and consistent.
-
-## 10. Prohibited Practices
-
+### 10. Prohibited Practices
 The following are strictly prohibited:
 - Hard-coded incentive logic
 - Unlogged administrative actions
@@ -123,20 +88,39 @@ The following are strictly prohibited:
 - Public referral sharing mechanisms
 - UI patterns that obscure incentive computation logic
 
-## 11. Governance
+## Non-Functional Constraints
 
-### Amendment Procedure
-1. **Proposal**: Amendments must be submitted as a formal Pull Request.
-2. **Review**: Changes must be reviewed by the system architect/owner.
-3. **Approval**: Ratification requires explicit sign-off; silent merge is not ratification.
-4. **Versioning**:
-   - **Major**: Fundamental change to core rules (e.g., changing from MLM-prohibited to MLM-allowed).
-   - **Minor**: New principle added or meaningful clarification.
-   - **Patch**: Typo fixes or non-semantic wording changes.
+The following constraints apply to all features and changes:
 
-### Compliance
-- All new feature specifications must be cross-checked against this constitution.
-- Non-compliant code must be rejected at review.
-- The `plan-template` Constitution Check gate is mandatory.
+- Safety: Critical operations MUST be transactional (or equivalent) and must fail without partial writes.
+- Audit: Any change to recruitment relationships, statuses, and incentives MUST have an audit trail.
+- Configurability: Incentive amounts and thresholds MUST come from centrally managed configuration.
+- Internal-only: Authentication is mandatory for all system access.
+- Privacy: Minimize personal data exposure and ensure role-scoped access.
 
-**Version**: 1.0.0 | **Ratified**: 2026-01-13 | **Last Amended**: 2026-01-13
+## Development Expectations
+
+- Specs, plans, and tasks MUST include an explicit "Constitution Check" section listing the applicable principles.
+- Features that touch incentives or recruitment MUST include:
+	- Traceability from incentive -> recruitment event(s)
+	- An explanation of computation (inputs, config, outcomes)
+	- Audit logging for awards, reversals, and status transitions
+- Any schema or rules evolution MUST include a migration/compatibility plan to keep historical records interpretable.
+
+## Governance
+
+**Amendments**
+- Any amendment MUST be proposed as a documented change to this file.
+- Amendments MUST include the rationale, migration/rollout considerations (if applicable), and a compliance review.
+
+**Versioning**
+- The constitution uses semantic versioning: MAJOR.MINOR.PATCH.
+- MAJOR: backward-incompatible governance or principle redefinition/removal.
+- MINOR: new principle/section added or materially expanded guidance.
+- PATCH: clarifications, wording fixes, non-semantic refinements.
+
+**Compliance Review Expectations**
+- All plans and implementations MUST be reviewed for compliance with this constitution.
+- Non-compliance is allowed only with an explicit, documented exception and approval recorded in the relevant spec/plan.
+
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date unknown | **Last Amended**: 2026-01-14

@@ -8,6 +8,12 @@ description: "Task list template for feature implementation"
 **Input**: Design documents from `/specs/[###-feature-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
+**Constitution**: If this feature touches recruitment, statuses, incentives, hierarchy, or admin actions, tasks MUST include:
+- Audit trail work (create/write logs for changes, awards, reversals)
+- Config-driven incentive values (no hard-coded amounts/logic)
+- RBAC enforcement (role-scoped access + explicit logged admin actions)
+- Tree integrity safeguards (no cycles; safe hierarchy updates)
+
 **Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
